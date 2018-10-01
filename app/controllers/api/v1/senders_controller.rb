@@ -1,5 +1,5 @@
 class Api::V1::SendersController < ApplicationController
-  # before_action :find_sender
+ # before_action :find_sender
 
 def create
   @sender = Sender.new(sender_params)
