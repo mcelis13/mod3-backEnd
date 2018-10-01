@@ -28,7 +28,7 @@ end
 private
 
 def message_params
-  params.require(:message).permit(:conversation_id);
+  params.require(:message).permit(:conversation_id, :content);
 end
 
 # def find_sender
