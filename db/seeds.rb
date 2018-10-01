@@ -7,4 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 sender1 = Sender.create({name: 'Madeline', user_name: 'maddie'});
-sender2 = Sender.create({name: 'Jason', user_name: 'junior'});
+reciever1 = Reciever.create({name: 'Jason', user_name: 'junior'});
+conversation = Conversation.create({sender_id: 1, reciever_id: 1});
+message = Message.create({content: 'first message', conversation_id: 1});
