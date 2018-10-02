@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2018_10_01_144440) do
 
   create_table "conversations", force: :cascade do |t|
     t.integer "sender_id"
-    t.integer "reciever_id"
+    t.integer "receiver_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2018_10_01_144440) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "recievers", force: :cascade do |t|
+  create_table "receivers", force: :cascade do |t|
     t.string "name"
     t.string "user_name"
     t.datetime "created_at", null: false

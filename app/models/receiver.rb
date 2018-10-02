@@ -1,4 +1,4 @@
-class Reciever < ApplicationRecord
+class Receiver < ApplicationRecord
   has_many :conversations
   has_many :messages
   has_many :messages, through: :conversations
