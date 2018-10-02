@@ -40,10 +40,12 @@ Rails.application.configure do
 
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
-
+  config.action_cable.disable_request_forgery_protection = true;
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
+  config.action_cable.mount_path = 'ws://localhost:3000'
+  config.action_cable.mount_path = '/cable'
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
