@@ -1,5 +1,4 @@
 class Api::V1::MessagesController < ApplicationController
-  # before_action :find_sender
 
 def create
   @message = Message.new(message_params)
@@ -40,9 +39,4 @@ private
 def message_params
   params.require(:message).permit(:content,:conversation_id);
 end
-
-# def find_sender
-#   @sender = Sender.find(params[:id]);
-# end
-
 end

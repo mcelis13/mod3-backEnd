@@ -1,5 +1,4 @@
 class Api::V1::ReceiversController < ApplicationController
-  # before_action :find_sender
 
 def create
   @receiver = Receiver.new(receiver_params)
@@ -30,9 +29,5 @@ private
 def receiver_params
   params.require(:receiver).permit(:name, :user_name);
 end
-
-# def find_sender
-#   @sender = Sender.find(params[:id]);
-# end
 
 end

@@ -1,7 +1,6 @@
 class ChatChannel < ApplicationCable::Channel
   def subscribed
      stream_from "chat_channel"
-     ChatChannel.all_messages(Message.all.order(id: :desc).limit(25).reorder(:id :asc))
   end
 
   def unsubscribed
@@ -9,12 +8,11 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def onChat(data)
-    @message = data
-    Action.server.broadcast('chat', message: @message.content)
+    Action.server.broadcast('chat_channel', message: data['message'])
   end
 
-  def self.all_messages(messages)
-    ActionCable.server.broadcast('chat_channel', history: messages)
-  end
+  # def self.all_messages(messages)
+  #   ActionCable.server.broadcast('chat_channel', history: messages)
+  # end
 
 end

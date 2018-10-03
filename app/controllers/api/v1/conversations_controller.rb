@@ -31,8 +31,4 @@ def conversation_params
   params.require(:conversation).permit(:sender_id, :reciever_id);
 end
 
-# def find_sender
-#   @sender = Sender.find(params[:id]);
-# end
-
 end
