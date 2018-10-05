@@ -1,6 +1,7 @@
 class Api::V1::SendersController < ApplicationController
 
 def show
+  @senders = Sender.find(params[:id])
   render json: @sender
 end
 

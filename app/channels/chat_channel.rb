@@ -8,8 +8,8 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def onChat(data)
-     # Message.create(content: data['content'], conversation_id: data['conversation_id'], sender_id: data['sender_id']);
-     ActionCable.server.broadcast('chat_channel', message: data['content']);
+     Message.create(content: data['content'], conversation_id: data['conversation_id'], sender_id: data['sender_id']);
+     # ActionCable.server.broadcast('chat_channel', message: data['content'], message: data['sender_id'], message: data['conversation_id']);
   end
 
   # def self.all_messages(messages)
