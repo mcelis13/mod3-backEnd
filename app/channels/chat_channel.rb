@@ -1,6 +1,6 @@
 class ChatChannel < ApplicationCable::Channel
   def subscribed
-     stream_from "chat_channel"
+      stream_from "chat_channel"
   end
 
   def unsubscribed
@@ -8,7 +8,8 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def onChat(data)
-    Action.server.broadcast('chat_channel', message: data['message'])
+     # Message.create(content: data['content'], conversation_id: data['conversation_id'], sender_id: data['sender_id']);
+     ActionCable.server.broadcast('chat_channel', message: data['content']);
   end
 
   # def self.all_messages(messages)

@@ -1,14 +1,15 @@
 class Api::V1::SendersController < ApplicationController
- # before_action :find_sender
+
+def show
+  render json: @sender
+end
+
+
 
 def create
-  @sender = Sender.new(sender_params)
-
-  if @sender.save
-    render json: @sender, status: :created
-  else
-    render json: @sender.errors, status: :unprocessible_entity
-  end
+  # find or create by name here instead
+  @sender = Sender.find_or_create_by({name: params[:name], user_name: params[:user_name]})
+  render json: @sender
 end
 
 def index
@@ -31,8 +32,5 @@ def sender_params
   params.require(:sender).permit(:name, :user_name);
 end
 
-# def find_sender
-#   @sender = Sender.find(params[:id]);
-# end
 
 end

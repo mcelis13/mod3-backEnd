@@ -1,5 +1,5 @@
 class Message < ApplicationRecord
   belongs_to :conversation
-  has_many :senders, through: :conversations
+  belongs_to :sender
   has_many :receivers, through: :conversations
 end
